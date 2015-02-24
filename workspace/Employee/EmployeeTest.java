@@ -1,0 +1,57 @@
+/**
+ * Employee Test class
+ * @author Kevin Liu & Yeran Xu
+ * Nov 12 2013
+ */
+public class EmployeeTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		/* create three different employees */
+		Employee emp = new Employee("Tom","123456789");
+		SalariedEmployee s_emp = new SalariedEmployee("Sam","789456132",500);
+		HourlyEmployee h_emp = new HourlyEmployee("Jack","987321456",15);
+		
+		/* simple employee*/
+		System.out.println("Employee name: " + emp.getName());
+		System.out.println("Employee SSN: " + emp.getSSnum());
+		
+		
+		/* salaried employee */
+		System.out.println("\nSalaried employee name: " + s_emp.getName());
+		System.out.println("Salaried employee SSN: " + s_emp.getSSnum());
+		System.out.printf("Salaried employee salary: $%.2f", s_emp.getSalary());
+		
+		System.out.println("\n\nSay salaried employee has worked two weeks.");
+		s_emp.getPay();
+		s_emp.getPay();
+		System.out.printf("Cumulative pay of salaried employee: $%.2f", s_emp.getCumulativePay());
+		System.out.println("\nChange salaried employee salary to $400.00");
+		s_emp.setSalary(400);
+		System.out.printf("Salaried employee salary: $%.2f", s_emp.getSalary());
+		System.out.println("\nSay salaried employee worked another week.");
+		s_emp.getPay();
+		System.out.printf("Cumulative pay of salaried employee: $%.2f", s_emp.getCumulativePay());
+		
+		
+		/* hourly employee */
+		System.out.println("\n\nHourly employee name: " + h_emp.getName());
+		System.out.println("Hourly employee SSN: " + h_emp.getSSnum());
+		System.out.printf("Hourly employee hourly wage: $%.2f", h_emp.getHourlyWage());
+		
+		System.out.println("\n\nSay hourly employee has worked 4 hours this week.");
+		h_emp.getPay(4);
+		System.out.printf("Cumulative pay of hourly employee: $%.2f", h_emp.getCumulativePay());
+		System.out.println("\nChange hourly employee salary to $20.00");
+		h_emp.setHourlyWage(20);
+		System.out.printf("Hourly employee hourly pay: $%.2f", h_emp.getHourlyWage());
+		System.out.println("\nSay hourly employee worked another 6 hours.");
+		h_emp.getPay(6);
+		System.out.printf("Cumulative pay of hourly employee: $%.2f", h_emp.getCumulativePay());
+		
+	} // end of main()
+
+} // end of EmployeeTest

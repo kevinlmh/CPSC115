@@ -1,0 +1,57 @@
+/**
+ * Class: scoreboard2
+ * 
+ * CPSC 115 - Java Lab 1
+ *
+ * Date: Nov 5 2013
+ * 
+ * Author: Minghui Liu
+ */
+import java.io.*;
+
+public class scoreboard2 {
+
+	public static void main(String[] args) throws IOException {
+		/* creating two team objects */
+		team home_team = new team;
+		team visit_team = new team;
+		
+		/* asking user to input team names */
+		System.out.print("Please enter the name of team 1: ");
+		team1.setName(inputName());
+		System.out.print("Please enter the name of team 2: ");
+		team2.setName(inputName());
+		
+		char option;
+		displayOptions();
+		option = getUserSelection();
+		if (option == 'h'){
+			updateScore(home_team);
+		}else if (option == 'v'){
+			updateScore(visit_team);
+		}else if (option == 'q'){
+			//exit program
+		}
+		
+	}
+
+	private String inputName() {
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader keyboard = new BufferedReader(in);
+		String in_name = keyboard.readLine();
+		return in_name;
+	}
+	
+	private void displayOptions(){
+		System.out.println("H - Home team scored\nV - Visiting team scored\nQ - Quit");
+	}
+	private String getUserSelection(){
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader keyboard = new BufferedReader(in);
+		String option = keyboard.readLine();
+		return option;
+	}
+	private void updateScore(team p_team, int increment){
+		p_team.setScore(p_team.getScore()+increment);
+	}
+}

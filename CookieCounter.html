@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>CookieCounter.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.ST1 {font-family: Monospaced; font-weight: bold}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.comment {color: #969696}
+.ST4 {color: #ce7b00; font-family: Monospaced; font-weight: bold}
+.ST2 {color: #009900}
+.character {color: #ce7b00}
+.ST3 {color: #009900; font-family: Monospaced; font-style: italic}
+.keyword-directive {color: #0000e6}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">/Users/LiuBin/NetBeansProjects/CookieTime/src/CookieCounter.java</td></tr></table>
+<pre>
+  1 <span class="comment">/**</span>
+  2 <span class="comment"> * </span><span class="ST0">CookieCounter</span> <span class="ST0">class</span>
+  3 <span class="comment"> * </span><span class="ST0">This</span> <span class="ST0">class</span> <span class="ST0">keeps</span> <span class="ST0">track</span> <span class="ST0">of</span> <span class="ST0">cookies</span> <span class="ST0">sold</span> <span class="ST0">by</span> <span class="ST0">Girl</span> <span class="ST0">Scout</span> <span class="ST0">troops</span>
+  4 <span class="comment"> * </span><span class="ST0">each</span> <span class="ST0">instance</span> <span class="ST0">represents</span> <span class="ST0">one</span> <span class="ST0">troop</span>
+  5 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Kevin</span> <span class="comment">Liu</span>
+  6 <span class="comment"> * </span><span class="comment">created</span> <span class="comment">on</span> <span class="comment">Dec</span><span class="comment"> 9 2013</span>
+  7  <span class="comment">*/</span>
+  8 <span class="keyword-directive">public</span> <span class="keyword-directive">class</span> <span class="ST1">CookieCounter</span> {
+  9     
+ 10     <span class="keyword-directive">private</span> <span class="keyword-directive">int</span> <span class="ST2">troop_number</span>;               <span class="comment">//troop number</span>
+ 11     <span class="keyword-directive">private</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> <span class="keyword-directive">int</span> <span class="ST3">NUM_TYPES</span> = 6; <span class="comment">//number of types of cookies</span>
+ 12     
+ 13     <span class="comment">//Types of cookies and their corresponding numbers</span>
+ 14     <span class="keyword-directive">public</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> <span class="keyword-directive">int</span> <span class="ST3">THIN_MINTS</span>     = 1;
+ 15     <span class="keyword-directive">public</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> <span class="keyword-directive">int</span> <span class="ST3">SHORTBREAD</span>     = 2;
+ 16     <span class="keyword-directive">public</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> <span class="keyword-directive">int</span> <span class="ST3">PEANUT_BUTTER</span>  = 3;
+ 17     <span class="keyword-directive">public</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> <span class="keyword-directive">int</span> <span class="ST3">MACAROONS</span>      = 4;
+ 18     <span class="keyword-directive">public</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> <span class="keyword-directive">int</span> <span class="ST3">LEMON_DROP</span>     = 5;
+ 19     <span class="keyword-directive">public</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> <span class="keyword-directive">int</span> <span class="ST3">SNIKERDOODLES</span>  = 6;
+ 20     
+ 21     <span class="comment">//an array of strings that holds the name of cookies</span>
+ 22     <span class="keyword-directive">private</span> <span class="keyword-directive">static</span> <span class="keyword-directive">final</span> String[] <span class="ST3">name</span> = {<span class="character">&quot;</span><span class="character">Thin Mints</span><span class="character">&quot;</span>, <span class="character">&quot;</span><span class="character">Shortbread</span><span class="character">&quot;</span>, <span class="character">&quot;</span><span class="character">Peanut butter</span><span class="character">&quot;</span>, 
+ 23                                           <span class="character">&quot;</span><span class="character">Macaroons</span><span class="character">&quot;</span>, <span class="character">&quot;</span><span class="character">Lemon drop</span><span class="character">&quot;</span>, <span class="character">&quot;</span><span class="character">Snikerdoodles</span><span class="character">&quot;</span>};
+ 24     
+ 25     <span class="comment">//an array that holds the sales for each type of cookie</span>
+ 26     <span class="keyword-directive">private</span> <span class="keyword-directive">int</span>[] <span class="ST2">sales</span> = <span class="keyword-directive">new</span> <span class="keyword-directive">int</span>[<span class="ST3">NUM_TYPES</span>];
+ 27     
+ 28     <span class="comment">//an array that holds the sales for each type of cookies of all troops conbined</span>
+ 29     <span class="keyword-directive">private</span> <span class="keyword-directive">static</span> <span class="keyword-directive">int</span>[] <span class="ST3">sales_all</span> = <span class="keyword-directive">new</span> <span class="keyword-directive">int</span>[<span class="ST3">NUM_TYPES</span>];
+ 30 
+ 31     <span class="comment">/**</span>
+ 32 <span class="comment">     * </span><span class="ST0">construct</span> <span class="ST0">a</span> <span class="ST0">troop</span> <span class="ST0">instance</span> <span class="ST0">and</span> <span class="ST0">set</span> <span class="ST0">troop</span> <span class="ST0">number</span>
+ 33 <span class="comment">     * </span><span class="ST0">@param</span> troop_number <span class="comment">troop</span> <span class="comment">number</span>
+ 34      <span class="comment">*/</span>
+ 35     <span class="keyword-directive">public</span> <span class="ST1">CookieCounter</span>(<span class="keyword-directive">int</span> troop_number) {
+ 36         <span class="keyword-directive">this</span>.<span class="ST2">troop_number</span> = troop_number;
+ 37     }
+ 38     
+ 39     <span class="comment">/**</span>
+ 40 <span class="comment">     * </span><span class="ST0">countSale</span> <span class="ST0">is</span> <span class="ST0">called</span> <span class="ST0">when</span> <span class="ST0">this</span> <span class="ST0">troop</span> <span class="ST0">sell</span> <span class="ST0">out</span> <span class="ST0">cookies</span>
+ 41 <span class="comment">     * </span><span class="ST0">@param</span> COOKIE_TYPE <span class="comment">type</span> <span class="comment">of</span> <span class="comment">cookie</span>
+ 42 <span class="comment">     * </span><span class="ST0">@param</span> num <span class="comment">number</span> <span class="comment">of</span> <span class="comment">boxes</span> <span class="comment">sold</span>
+ 43      <span class="comment">*/</span>
+ 44     <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> <span class="ST1">countSale</span>(<span class="keyword-directive">int</span> COOKIE_TYPE, <span class="keyword-directive">int</span> num) {
+ 45         <span class="keyword-directive">if</span> (validCookieNumber(COOKIE_TYPE)) {
+ 46             <span class="ST2">sales</span>[COOKIE_TYPE-1] += num;   <span class="comment">//because array index starts at 0, COOCIE_TYPE-1 is used</span>
+ 47             <span class="ST3">sales_all</span>[COOKIE_TYPE-1] += num;
+ 48         }<span class="keyword-directive">else</span> {
+ 49             System.<span class="ST3">out</span>.print(<span class="character">&quot;</span><span class="ST4">\n</span><span class="character">&quot;</span>);
+ 50             System.<span class="ST3">out</span>.print(COOKIE_TYPE);
+ 51             System.<span class="ST3">out</span>.println(<span class="character">&quot;</span><span class="character"> is not a valid cookie type!</span><span class="character">&quot;</span>);
+ 52         }    
+ 53     }
+ 54 
+ 55     <span class="comment">/**</span>
+ 56 <span class="comment">     * </span><span class="comment">displays</span> <span class="comment">sales</span> <span class="comment">of</span> <span class="comment">each</span> <span class="comment">type</span> <span class="comment">of</span> <span class="comment">cookie</span> <span class="comment">made</span> <span class="comment">by</span> <span class="comment">this</span> <span class="comment">troop</span>
+ 57      <span class="comment">*/</span>
+ 58     <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> <span class="ST1">displayTroopSales</span>() {
+ 59         <span class="comment">//display troop number</span>
+ 60         System.<span class="ST3">out</span>.println(<span class="character">&quot;</span><span class="ST4">\n</span><span class="character">---Troop Sales---</span><span class="character">&quot;</span>);
+ 61         System.<span class="ST3">out</span>.print(<span class="character">&quot;</span><span class="character">Troop No.</span><span class="character">&quot;</span>);
+ 62         System.<span class="ST3">out</span>.println(<span class="ST2">troop_number</span>);
+ 63         <span class="comment">//display all cookie name and number of boxes sold</span>
+ 64         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i=0; i&lt;<span class="ST3">NUM_TYPES</span>; i++) {
+ 65             System.<span class="ST3">out</span>.print(<span class="ST3">name</span>[i]+<span class="character">&quot;</span><span class="character">: </span><span class="ST4">\t</span><span class="character">&quot;</span>);
+ 66             System.<span class="ST3">out</span>.println(<span class="ST2">sales</span>[i]);
+ 67         }
+ 68     }
+ 69     
+ 70     <span class="comment">/**</span>
+ 71 <span class="comment">     * </span><span class="ST0">displays</span> <span class="ST0">sales</span> <span class="ST0">of</span> <span class="ST0">a</span> <span class="ST0">certain</span> <span class="ST0">type</span> <span class="ST0">of</span> <span class="ST0">cookie</span> <span class="ST0">made</span> <span class="ST0">by</span> <span class="ST0">this</span> <span class="ST0">troop</span>
+ 72 <span class="comment">     * </span><span class="ST0">@param</span> COOKIE_TYPE <span class="comment">the</span> <span class="comment">type</span> <span class="comment">of</span> <span class="comment">cookie</span> <span class="comment">to</span> <span class="comment">be</span> <span class="comment">displayed</span>
+ 73      <span class="comment">*/</span>
+ 74     <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> <span class="ST1">displayTroopSales</span>(<span class="keyword-directive">int</span> COOKIE_TYPE) {
+ 75         <span class="keyword-directive">if</span> (validCookieNumber(COOKIE_TYPE)) {
+ 76         <span class="comment">//display troop number</span>
+ 77         System.<span class="ST3">out</span>.println(<span class="character">&quot;</span><span class="ST4">\n</span><span class="character">---Troop Sales---</span><span class="character">&quot;</span>);
+ 78         System.<span class="ST3">out</span>.print(<span class="character">&quot;</span><span class="character">Troop No.</span><span class="character">&quot;</span>);
+ 79         System.<span class="ST3">out</span>.println(<span class="ST2">troop_number</span>);
+ 80         
+ 81         <span class="comment">//display cookie name and number of boxes sold</span>
+ 82         System.<span class="ST3">out</span>.print(<span class="ST3">name</span>[COOKIE_TYPE-1]+<span class="character">&quot;</span><span class="character">: </span><span class="ST4">\t</span><span class="character">&quot;</span>); <span class="comment">//because array index starts at 0, COOCIE_TYPE-1 is used</span>
+ 83         System.<span class="ST3">out</span>.println(<span class="ST2">sales</span>[COOKIE_TYPE-1]);
+ 84         }<span class="keyword-directive">else</span>{
+ 85             System.<span class="ST3">out</span>.print(<span class="character">&quot;</span><span class="ST4">\n</span><span class="character">&quot;</span>);
+ 86             System.<span class="ST3">out</span>.print(COOKIE_TYPE);
+ 87             System.<span class="ST3">out</span>.println(<span class="character">&quot;</span><span class="character"> is not a valid cookie type!</span><span class="character">&quot;</span>);
+ 88         }
+ 89     }
+ 90     
+ 91     <span class="comment">/**</span>
+ 92 <span class="comment">     * </span><span class="comment">display</span> <span class="comment">sales</span> <span class="comment">for</span> <span class="comment">each</span> <span class="comment">type</span> <span class="comment">of</span> <span class="comment">cookie</span> <span class="comment">of</span> <span class="comment">all</span> <span class="comment">troops</span> <span class="comment">combined</span>
+ 93      <span class="comment">*/</span>
+ 94     <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> <span class="ST1">displayAllSales</span>() {
+ 95         System.<span class="ST3">out</span>.println(<span class="character">&quot;</span><span class="ST4">\n</span><span class="character">---All Sales---</span><span class="character">&quot;</span>);
+ 96         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i=0; i&lt;<span class="ST3">NUM_TYPES</span>; i++) {
+ 97             System.<span class="ST3">out</span>.print(<span class="ST3">name</span>[i]+<span class="character">&quot;</span><span class="character">: </span><span class="ST4">\t</span><span class="character">&quot;</span>);
+ 98             System.<span class="ST3">out</span>.println(<span class="ST3">sales_all</span>[i]);
+ 99         }
+100     }
+101     
+102     <span class="comment">/**</span>
+103 <span class="comment">     * </span><span class="comment">displays</span> <span class="comment">the</span> <span class="comment">bestselling</span> <span class="comment">type</span><span class="comment">(</span><span class="comment">s</span><span class="comment">) </span><span class="comment">of</span> <span class="comment">cookie</span>
+104 <span class="comment">     * </span><span class="comment">if</span> <span class="comment">two</span> <span class="comment">or</span> <span class="comment">more</span> <span class="comment">types</span> <span class="comment">of</span> <span class="comment">cookie</span> <span class="comment">has</span> <span class="comment">the</span> <span class="comment">same</span>
+105 <span class="comment">     * </span><span class="comment">sales</span><span class="comment">, </span><span class="comment">then</span> <span class="comment">all</span> <span class="comment">them</span> <span class="comment">are</span> <span class="comment">displayed</span>
+106      <span class="comment">*/</span>
+107     <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> <span class="ST1">displayTroopBestseller</span>() {
+108         
+109         <span class="keyword-directive">int</span> bestseller = 0;     <span class="comment">//holds the biggest number in &quot;sales&quot; array</span>
+110         
+111         <span class="comment">//display troop number</span>
+112         System.<span class="ST3">out</span>.println(<span class="character">&quot;</span><span class="ST4">\n</span><span class="character">---Troop Bestseller---</span><span class="character">&quot;</span>);
+113         System.<span class="ST3">out</span>.print(<span class="character">&quot;</span><span class="character">Troop No.</span><span class="character">&quot;</span>);
+114         System.<span class="ST3">out</span>.println(<span class="ST2">troop_number</span>);
+115         
+116         <span class="comment">//go through array &quot;sales&quot; and find the biggest number</span>
+117         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i=0; i&lt;<span class="ST3">NUM_TYPES</span>; i++) {
+118             <span class="keyword-directive">if</span> (<span class="ST2">sales</span>[i]&gt;bestseller) {
+119                 bestseller = <span class="ST2">sales</span>[i];
+120             }<span class="comment">//end of if</span>
+121         }<span class="comment">//end of for loop</span>
+122         
+123         <span class="comment">//go through array &quot;sales&quot; and &quot;name&quot; and print name and sales of bestseller(s)</span>
+124         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> j=0; j&lt;<span class="ST3">NUM_TYPES</span>; j++) {
+125             <span class="keyword-directive">if</span> (<span class="ST2">sales</span>[j] == bestseller) {     
+126                 System.<span class="ST3">out</span>.print(<span class="ST3">name</span>[j]+<span class="character">&quot;</span><span class="character">: </span><span class="ST4">\t</span><span class="character">&quot;</span>);
+127                 System.<span class="ST3">out</span>.println(<span class="ST2">sales</span>[j]);
+128             }<span class="comment">//end of if</span>
+129         }<span class="comment">//end of for loop</span>
+130     }
+131     
+132     <span class="comment">/**</span>
+133 <span class="comment">     * </span><span class="ST0">checks</span> <span class="ST0">if</span> <span class="ST0">a</span> <span class="ST0">number</span> <span class="ST0">is</span> <span class="ST0">a</span> <span class="ST0">valid</span> <span class="ST0">cookie</span> <span class="ST0">type</span> <span class="ST0">number</span>
+134 <span class="comment">     * </span><span class="ST0">@param</span> type_number <span class="comment">the</span> <span class="comment">number</span> <span class="comment">to</span> <span class="comment">be</span> <span class="comment">checked</span>
+135 <span class="comment">     * </span><span class="ST0">@return</span> <span class="comment">true</span> <span class="comment">if</span> <span class="comment">number</span> <span class="comment">is</span> <span class="comment">a</span> <span class="comment">cookie</span> <span class="comment">type</span> <span class="comment">number</span><span class="comment">, </span><span class="comment">false</span> <span class="comment">if</span> <span class="comment">not</span>
+136      <span class="comment">*/</span>
+137     <span class="keyword-directive">private</span> <span class="keyword-directive">boolean</span> <span class="ST1">validCookieNumber</span>(<span class="keyword-directive">int</span> type_number) {
+138             <span class="keyword-directive">return</span> (type_number &gt; 0) &amp;&amp; (type_number &lt;= <span class="ST3">NUM_TYPES</span>);
+139     }
+140 
+141 }<span class="comment">//end of CookieCounter</span>
+</pre></body>
+</html>

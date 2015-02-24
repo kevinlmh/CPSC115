@@ -1,0 +1,28 @@
+/**
+ * Hourly Employee class
+ * @author mliu2
+ * Nov 12 2013
+ */
+public class HourlyEmployee extends Employee {
+	
+	private double hourly_wage;
+	
+	public HourlyEmployee (String name, String SSnum, double hourly_wage) {
+		super(name, SSnum);
+		this.hourly_wage = hourly_wage;
+	}
+	
+	public void setHourlyWage(double hourly_wage) {
+		this.hourly_wage = hourly_wage;
+	}
+	
+	public double getHourlyWage() {
+		return hourly_wage;
+	}
+	
+	public double getPay(float hours) {
+		double pay = hours * hourly_wage;
+		updateCumulativePay(pay);
+		return pay;
+	}
+}

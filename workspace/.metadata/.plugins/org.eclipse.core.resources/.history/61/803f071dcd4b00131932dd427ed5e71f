@@ -1,0 +1,9 @@
+/**
+ * Salaried Employee class
+ * @author Kevin Liu
+ * Nov 12 2013
+ *
+ */
+public class SalariedEmployee extends Employee {
+	public SalariedEmployee
+}

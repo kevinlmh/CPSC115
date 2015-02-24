@@ -1,0 +1,27 @@
+/**
+ * A class that tests CookieCounter class
+ * @author Kevin Liu
+ * created on Dec 9 2013
+ */
+public class CookieTest {
+    
+    public static void main(String args[]) {
+        CookieCounter cc = new CookieCounter(1234);
+        
+        cc.countSale(CookieCounter.THIN_MINTS,      6);
+        cc.countSale(CookieCounter.SHORTBREAD,      3);
+        cc.countSale(CookieCounter.PEANUT_BUTTER,   5);
+        cc.countSale(CookieCounter.MACAROONS,       6);
+        cc.countSale(CookieCounter.LEMON_DROP,      4);
+        cc.countSale(CookieCounter.SNIKERDOODLES,   5);
+        cc.countSale(7, 2);
+        
+        cc.displayTroopSales();
+        
+        cc.displayTroopSales(1);
+        
+        cc.displayTroopBestseller();
+        
+        cc.displayAllSales();
+    }
+}

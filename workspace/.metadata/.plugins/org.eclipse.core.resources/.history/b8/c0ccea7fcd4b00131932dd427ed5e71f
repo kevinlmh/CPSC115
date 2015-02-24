@@ -1,0 +1,31 @@
+/**
+ * Employee class
+ * @author Kevin Liu
+ * Nov 12 2013
+ */
+public class Employee {
+	private String name;
+	private String SSnum;
+	private double cumulativePay;
+	
+	public Employee(String name, String SSnum) {
+		this.name = name;
+		this.SSnum = SSnum;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getSSnum() {
+		return SSnum;
+	}
+	
+	public double getCumulativePay() {
+		return cumulativePay;
+	}
+}

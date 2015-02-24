@@ -1,0 +1,29 @@
+/**
+ * Salaried Employee class
+ * @author Kevin Liu & Yeran Xu
+ * Nov 12 2013
+ *
+ */
+public class SalariedEmployee extends Employee {
+	
+	private double salary;
+	
+	public SalariedEmployee(String name, String SSnum, double salary) {
+		super(name, SSnum);
+		this.salary = salary;
+	}
+	
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public double getSalary() {
+		return salary;
+	}
+	
+	public double getPay() {
+		updateCumulativePay(salary);
+		return salary;
+	}
+	
+}

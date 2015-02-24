@@ -1,0 +1,7 @@
+
+public static void main(String[] args){
+	scoreboard scoreboard = new scoreboard;
+	scoreboard.setScore1(2);
+	scoreboard.setScore2(3);
+	scoreboard.printWinner();
+}

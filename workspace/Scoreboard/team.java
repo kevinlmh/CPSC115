@@ -1,0 +1,54 @@
+/**
+ * Class: team
+ * 
+ * CPSC 115 - Java Lab 1
+ *
+ * Date: Nov 5 2013
+ * 
+ * Author: Minghui Liu
+ */
+
+public class team {
+	private String name;	//team name
+	private int score;		//team score
+
+	/* Constructor method without parameters */
+	public team(){
+		name = "Unknow";
+		score = 0;
+	}
+	/* Constructor with parameters */
+	public team(String p_name, int p_score){
+		name = p_name;
+		score = p_score;
+	}
+	/* Method: setName() - set name of a team
+	 * parameter: p_name
+	 * return type: void
+	 */
+	public void setName(String p_name){
+		name = p_name;
+	}
+	/* Method: setScore() - set score of a team
+	 * parameter: p_score
+	 * return type: void
+	 */
+	public void setScore(int p_score){
+		score = p_score;
+	}
+	/* Method: getName() - get the name of a team
+	 * parameter: none
+	 * return type: String
+	 */
+	public String getName(){
+		return name;
+	}
+	/* Method: getScore() - get the score of a team
+	 * parameter: none
+	 * return type: int
+	 */
+	public int getScore(){
+		return score;
+	}
+
+}

@@ -1,0 +1,28 @@
+There will be a quiz on loops on Thursday.  Here are practice problems for you to try.
+Write a python program to prompt a user to enter a low and a high value.  Your program is then to output all the even values between and including the low value and the high value, a bar and then the final sum.  If the low value is greater than the high value, or there are no even values in the specified interval, the program should output “There are no even values in this interval’. So for instance, if the user entered low as 2 and high as 9, your program should output (25 pts)
+ 
+2
+4
+6
+8
+-----
+20
+ 
+Write a python program that will first prompt the user to enter a numeric “echo factor”, which must be a positive number.  The user is then prompted to enter a string.  The string will then the output to the screen the number of times indicated by the echo factor.  For example, if the echo factor was 3, and the string was Dog, the output would be:
+ 
+Dog
+Dog
+Dog
+ 
+The user will continue to be prompted for an echo factor and a string and the specified output will be displayed until they enter a negative number for the echo factor, at which point the program should output “Thank you” and terminate. (25 pts)
+ 
+Prompt the user to enter an integer.  Your program is to print out every number that evenly divides that integer.
+ 
+ 
+ 
+A prime number is a number that  can only be evenly  divided by  1 and itself (like 17).  Prompt the user to enter a number and your program should determine if the number is a prime number or not.  This is a trial and error problem, but your methodology should be efficient.  For instance, once it has been determined that a number is not prime, your loop should terminate.  Also, consider what values do not need be checked and design your algorithm so that you do not check them.  For instance ask yourself, “Might  5 evenly  divide 17?”  Well, maybe, so it should be checked, because if it evenly divides 17 then 17 would not be prime.  On the other hand, what is the answer to “Might 14 evenly divide 17?” and how should that affect the efficient design of your algorithm.
+ 
+ 
+Prompt the user to enter an integer between 1 and 10.  If they enter a number out of that range, print an error statement and prompt them again to enter a number in the correct range.  However, they should get no more than 5 tries.  If they have not entered a correct number after 5 tries, a final error message should be output and the program should terminate. If they do enter a correct number, simply output that number.
+ 
+(This is an extension of our class example). Write a program to prompt the user to enter the number of questions on an exam, then prompt the user to enter the scores for that exam print out the total.  Update the program so that it asks the user to input the number of students in the class, and the number of questions on the exam, and then prompts the user to enter the exam scores and gives a total for each student in the class.  As an extra, also calculate and output the average test scores of all the students.

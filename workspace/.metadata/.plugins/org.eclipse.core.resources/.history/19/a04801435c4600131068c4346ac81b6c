@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+
+/**
+ * @author mliu2
+ *
+ */
+public class scoreboard {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

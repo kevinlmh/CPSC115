@@ -1,0 +1,38 @@
+/**
+ * Employee Test class
+ * @author mliu2
+ * Nov 12 2013
+ */
+public class EmployeeTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Employee emp = new Employee("Tom","123456789");
+		SalariedEmployee s_emp = new SalariedEmployee("Sam","789456132",500);
+		HourlyEmployee h_emp = new HourlyEmployee("Jack","987321456",15);
+		
+		System.out.println("Employee name: " + emp.getName());
+		System.out.println("Employee SSN: " + emp.getSSnum());
+		
+		System.out.println("Salaried employee name: " + s_emp.getName());
+		System.out.println("Salaried employee SSN: " + s_emp.getSSnum());
+		System.out.println("Salaried employee salary: " + s_emp.getSalary());
+		
+		System.out.println("Hourly employee name: " + h_emp.getName());
+		System.out.println("Hourly employee SSN: " + h_emp.getSSnum());
+		System.out.println("Hourly employee salary: " + h_emp.getHourlyWage());
+		
+		System.out.println("Say salaried employee has worked two weeks.");
+		s_emp.getPay();
+		s_emp.getPay();
+		System.out.println("Cumulative pay of salaried employee: " + s_emp.getCumulativePay());
+		
+		System.out.println("Say hourly employee has worked 4 hours this week.");
+		h_emp.getPay(4);
+		System.out.println("Cumulative pay of hourly employee: " + h_emp.getCumulativePay());
+		
+	}
+
+}

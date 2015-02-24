@@ -1,0 +1,45 @@
+#Minghui Liu
+#CPSC-115
+#Dr.Spezialetti
+#Program 1
+#King Cole Laser Tag
+
+price_adult = 7
+price_children = 5
+price_feast = 100
+price_pizza = 18
+price_arena =250
+
+
+num_adult = input("Please enter the number of adults: ")
+num_children = input("Please enter the number of children: ")
+num_game = input("Please enter the number of games you want to play: ")
+rent_arena = raw_input("Do you want to rent the whole arena? ")
+
+royal_feast = raw_input("Do you want royal feast? (Y=Yes N=No) ")
+
+if royal_feast == "Y" or "y":
+    print "King Cole Laser Tag offers one size of pizza. Each pizza contains 16 slices."
+    num_pizza = input("Please enter the number of pizza you want: ")
+    subtotal_food = price_feast + price_pizza*num_pizza
+else:
+    subtotal_food = 0
+
+
+subtotal_game = price_adult*num_adult + price_children*num_children
+
+if num_game>1:
+    subtotal_game = subtotal_game - num_game
+if rent_arena == "Y" or "y":
+    subtotal_game = subtotal_game + price_arena
+
+    
+if subtotal_food != 0:
+    total = subtotal_game + subtotal_food
+else:
+    total = subtotal_game
+
+print "The total cost is: ", total
+print "Thank you very much, plase come again."
+    
+

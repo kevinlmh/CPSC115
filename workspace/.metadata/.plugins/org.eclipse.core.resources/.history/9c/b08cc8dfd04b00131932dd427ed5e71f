@@ -1,0 +1,23 @@
+/**
+ * Employee Test class
+ * @author mliu2
+ *
+ */
+public class EmployeeTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Employee emp = new Employee("Tom","123456789");
+		SalariedEmployee s_emp = new SalariedEmployee("Sam","789456132",500);
+		HourlyEmployee h_emp = new HourlyEmployee("Jack","987321456",15);
+		
+		System.out.println("Employee name: " + emp.getName());
+		System.out.println(emp.getSSnum());
+		System.out.println(s_emp.getSalary());
+		System.out.println(s_emp.getPay());
+		
+	}
+
+}

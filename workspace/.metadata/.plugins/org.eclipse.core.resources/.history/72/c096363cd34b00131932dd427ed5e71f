@@ -1,0 +1,54 @@
+/**
+ * Employee Test class
+ * @author Kevin Liu & Yeran Xu
+ * Nov 12 2013
+ */
+public class EmployeeTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Employee emp = new Employee("Tom","123456789");
+		SalariedEmployee s_emp = new SalariedEmployee("Sam","789456132",500);
+		HourlyEmployee h_emp = new HourlyEmployee("Jack","987321456",15);
+		
+		System.out.println("Employee name: " + emp.getName());
+		System.out.println("Employee SSN: " + emp.getSSnum());
+		
+		
+		
+		System.out.println("\nSalaried employee name: " + s_emp.getName());
+		System.out.println("Salaried employee SSN: " + s_emp.getSSnum());
+		System.out.println("Salaried employee salary: " + s_emp.getSalary());
+		
+		System.out.println("\nSay salaried employee has worked two weeks.");
+		s_emp.getPay();
+		s_emp.getPay();
+		System.out.println("Cumulative pay of salaried employee: " + s_emp.getCumulativePay());
+		System.out.println("Change salaried employee salary to $400.");
+		s_emp.setSalary(400);
+		System.out.println("Salaried employee salary: " + s_emp.getSalary());
+		System.out.println("Say salaried employee worked another week.");
+		s_emp.getPay();
+		System.out.println("Cumulative pay of salaried employee: " + s_emp.getCumulativePay());
+		
+		
+		
+		System.out.println("\nHourly employee name: " + h_emp.getName());
+		System.out.println("Hourly employee SSN: " + h_emp.getSSnum());
+		System.out.println("Hourly employee hourly wage: " + h_emp.getHourlyWage());
+		
+		System.out.println("\nSay hourly employee has worked 4 hours this week.");
+		h_emp.getPay(4);
+		System.out.println("Cumulative pay of hourly employee: " + h_emp.getCumulativePay());
+		System.out.println("Change hourly employee salary to $20.");
+		h_emp.setHourlyWage(20);
+		System.out.println("Hourly employee hourly pay: " + h_emp.getHourlyWage());
+		System.out.println("Say hourly employee worked another 6 hours.");
+		h_emp.getPay(6);
+		System.out.println("Cumulative pay of hourly employee: " + h_emp.getCumulativePay());
+		
+	}
+
+}

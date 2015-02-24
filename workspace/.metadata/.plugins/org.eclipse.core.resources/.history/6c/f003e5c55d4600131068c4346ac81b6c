@@ -1,0 +1,26 @@
+/**
+ * Class: scoreboard
+ * 
+ * CPSC 115 - Java Lab 1
+ *
+ * Date: Nov 5 2013
+ * 
+ * Author: Minghui Liu
+ */
+
+public class scoreboard {
+
+	public static void main(String[] args) {
+		team home_team = new team;
+		team visit_team = new team;
+		updateScore(home_team,2);
+		updateScore(visit_team,3);
+		
+
+	}
+	
+	private void updateScore(team p_team, int increment){
+		p_team.setScore(p_team.getScore()+increment)
+	}
+	private void 
+}

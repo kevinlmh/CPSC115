@@ -1,0 +1,27 @@
+/**
+ * Class: scoreboard
+ * 
+ * CPSC 115 - Java Lab 1
+ *
+ * Date: Nov 5 2013
+ * 
+ * Author: Minghui Liu
+ */
+
+public class scoreboard {
+	private team home_team = new team;
+	private team visit_team = new team;
+	
+	private void updateScore(team p_team, int increment){
+		p_team.setScore(p_team.getScore()+increment)
+	}
+	private void printWinner(){
+		if (home_team.getScore() > visit_team.getScore()){
+			System.out.println("Winner: "+home_team.getName());
+		}else if (visit_team.getScore() > home_team.getScore()){
+			System.out.println("Winner: "+visit_team.getName());
+		}else {
+			System.out.println("The game ends in a draw.");
+		}
+	}
+}
